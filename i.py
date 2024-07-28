@@ -4,7 +4,7 @@ import subprocess
 def install_jupyter():
     try:
         # Cài đặt Jupyter Lab
-        subprocess.check_call([os.sys.executable, '-m', 'pip', 'install', 'jupyterlab', "--ip=0.0.0.0"])
+        subprocess.check_call([os.sys.executable, '-m', 'pip', 'install', 'jupyterlab'])
         print("Jupyter Lab đã được cài đặt thành công.")
     except subprocess.CalledProcessError:
         print("Có lỗi xảy ra trong quá trình cài đặt Jupyter Lab.")
@@ -12,7 +12,7 @@ def install_jupyter():
 def run_jupyter():
     try:
         # Chạy Jupyter Lab
-        subprocess.run([os.sys.executable, '-m', 'jupyter', 'lab'])
+        subprocess.run([os.sys.executable, '-m', "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token='11042006'"])
     except KeyboardInterrupt:
         print("Jupyter Lab đã dừng.")
 
