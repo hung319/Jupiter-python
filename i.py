@@ -4,7 +4,7 @@ import subprocess
 def install_jupyter():
     try:
         # Cài đặt Jupyter Lab
-        subprocess.check_call([os.sys.executable, '-m', 'pip', 'install', 'jupyterlab'])
+        subprocess.check_call([os.sys.executable, '-m', 'pip', 'install', 'jupyterlab', "--ip=0.0.0.0"])
         print("Jupyter Lab đã được cài đặt thành công.")
     except subprocess.CalledProcessError:
         print("Có lỗi xảy ra trong quá trình cài đặt Jupyter Lab.")
