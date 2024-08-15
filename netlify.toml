@@ -1,8 +1,0 @@
-[build]
-  command = "python i.py && sleep 5"
-  publish = "."
-
-[[redirects]]
-  from = "/*"
-  to = "/lab"
-  status = 200
