@@ -4,5 +4,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/tree"
+  to = "/lab"
   status = 200
