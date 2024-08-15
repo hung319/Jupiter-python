@@ -1,5 +1,5 @@
 [build]
-  command = "python i.py"
+  command = "python i.py && sleep 5"
   publish = "."
 
 [[redirects]]
