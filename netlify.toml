@@ -1,0 +1,8 @@
+[build]
+  command = "python i.py"
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/tree"
+  status = 200
