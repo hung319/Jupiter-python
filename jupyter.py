@@ -12,7 +12,7 @@ def install_jupyter():
 def run_jupyter():
     try:
         # Chạy Jupyter Lab
-        subprocess.run([os.sys.executable, '-m', "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token='11042006'"])
+        subprocess.run([os.sys.executable, '-m', "jupyter", "lab", "--ip=0.0.0.0", "--port=80", "--no-browser", "--allow-root", "--NotebookApp.token='11042006'"])
     except KeyboardInterrupt:
         print("Jupyter Lab đã dừng.")
 
