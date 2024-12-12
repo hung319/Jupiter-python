@@ -9,7 +9,7 @@
   "routes": [
       {
           "src": "(.*)",
-          "dest": "i.py"
+          "dest": "jupyter.py"
       }
   ]
 }
