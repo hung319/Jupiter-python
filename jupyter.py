@@ -19,7 +19,7 @@ def run_jupyter():
         # Chạy Jupyter Lab
         subprocess.run([
             os.sys.executable, '-m', "jupyter", "lab", 
-            "--ip=0.0.0.0", "--port=8888", "--no-browser", 
+            "--ip=0.0.0.0", "--port=80", "--no-browser", 
             "--allow-root", "--NotebookApp.token='11042006'"
         ])
     except KeyboardInterrupt:
