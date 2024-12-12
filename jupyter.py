@@ -1,30 +1,28 @@
 import os
+import sys
 import subprocess
 
-def install_jupyter():
+def check_and_install_jupyterlab():
     try:
         # Kiểm tra nếu JupyterLab đã được cài đặt
-        subprocess.check_call([os.sys.executable, '-m', 'jupyter', '--version'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print("Jupyter Lab đã được cài đặt trước đó.")
-    except subprocess.CalledProcessError:
-        print("Jupyter Lab chưa được cài đặt. Đang tiến hành cài đặt...")
-        try:
-            subprocess.check_call([os.sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'])
-            print("Jupyter Lab đã được cài đặt thành công.")
-        except subprocess.CalledProcessError as e:
-            print(f"Có lỗi xảy ra trong quá trình cài đặt Jupyter Lab: {e}")
+        import jupyterlab
+        print("JupyterLab is already installed.")
+    except ImportError:
+        print("JupyterLab is not installed. Installing now...")
+        # Cài đặt JupyterLab
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "jupyterlab"])
+        print("JupyterLab installed successfully.")
 
-def run_jupyter():
+def start_jupyterlab():
     try:
-        # Chạy Jupyter Lab
-        subprocess.run([
-            os.sys.executable, '-m', "jupyter", "lab", 
-            "--ip=0.0.0.0", "--port=80", "--no-browser", 
-            "--allow-root", "--NotebookApp.token='11042006'"
-        ])
+        print("Starting JupyterLab...")
+        subprocess.run([sys.executable, "-m", "jupyter", "lab", "--ip=0.0.0.0", "--port=80", "--no-browser"])
     except KeyboardInterrupt:
-        print("Jupyter Lab đã dừng.")
+        print("\nStopping JupyterLab...")
+        sys.exit(0)
 
 if __name__ == "__main__":
-    install_jupyter()
-    run_jupyter()
+    # Kiểm tra và cài đặt JupyterLab
+    check_and_install_jupyterlab()
+    # Khởi chạy JupyterLab
+    start_jupyterlab()
